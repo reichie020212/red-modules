@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="school_type_filter_to_school_system" model="ir.rule">
+        <field
+      name="name"
+    >Filter school type by school system of the user</field>
+        <field name="model_id" ref="red_school_system.model_school_type" />
+        <field
+      name="domain_force"
+    >[('school_system_id', 'in', user.company_ids.ids)]</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]" />
+    </record>
+
+    <record model="res.groups" id="school_admin">
+        <field name="name">School Admin</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field
+      name="users"
+      eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
+    />
+    </record>
+    <record model="res.groups" id="school_system_admin">
+        <field name="name">School System Admin</field>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field
+      name="users"
+      eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
+    />
+    </record>
+</odoo>

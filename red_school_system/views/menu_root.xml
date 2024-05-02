@@ -1,0 +1,12 @@
+<odoo>
+    <!-- Top menu item -->
+    <menuitem name="School System" id="school_system_menu_root" />
+
+    <!-- Submenu items -->
+    <menuitem
+    name="Configuration"
+    id="school_config"
+    parent="school_system_menu_root"
+    sequence="20"
+  />
+</odoo>

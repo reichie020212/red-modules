@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+school_admin_access,School Admin Access,base.model_res_partner,red_school_system.school_admin,1,1,1,1
+year_level_school_admin_access,Year Level School Admin Access,red_school_system.model_year_level,red_school_system.school_admin,1,1,1,1
+school_type_school_admin_access,School Type School Admin Access,red_school_system.model_school_type,red_school_system.school_admin,1,0,0,0
+school_year_school_admin_access,School Year School Admin Access,red_school_system.model_school_year,red_school_system.school_admin,1,0,0,0
+
+school_system_admin_access,School System Admin Access,base.model_res_partner,red_school_system.school_system_admin,1,1,1,1
+year_level_school_system_admin_access,Year Level School System Admin Access,red_school_system.model_year_level,red_school_system.school_system_admin,1,1,1,1
+school_type_school_system_admin_access,School Type School System Admin Access,red_school_system.model_school_type,red_school_system.school_system_admin,1,1,1,1
+school_year_school_system_admin_access,School Year School System Admin Access,red_school_system.model_school_year,red_school_system.school_system_admin,1,1,1,1

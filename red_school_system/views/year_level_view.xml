@@ -1,0 +1,67 @@
+<odoo>
+    <record id="year_level_view_tree" model="ir.ui.view">
+        <field name="name">year_level_view_tree</field>
+        <field name="model">year.level</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="code" />
+                <field name="next_year_level_id" />
+                <field name="prev_year_level_id" />
+                <field name="school_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="year_level_view_form" model="ir.ui.view">
+        <field name="name">year_level_view_form</field>
+        <field name="model">year.level</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="basic">
+                        <field
+              name="school_system_id"
+              invisible="1"
+              options="{'no_create': True}"
+            />
+                        <field name="year_level_domain" invisible="1" />
+                        <field name="school_id" options="{'no_create': True}" />
+                        <field name="name" />
+                        <field name="code" />
+                        <field
+              name="next_year_level_id"
+              options="{'no_create': True}"
+              domain="year_level_domain"
+            />
+                        <field
+              name="prev_year_level_id"
+              options="{'no_create': True}"
+              domain="year_level_domain"
+            />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="year_level_action_window" model="ir.actions.act_window">
+        <field name="name">Year Level</field>
+        <field name="res_model">year.level</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new year level
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+    name="Year Level"
+    sequence="1"
+    id="year_level_list"
+    parent="school_config"
+    action="year_level_action_window"
+  />
+</odoo>

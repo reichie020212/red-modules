@@ -1,0 +1,52 @@
+<odoo>
+    <record id="school_type_view_tree" model="ir.ui.view">
+        <field name="name">school_type_view_tree</field>
+        <field name="model">school.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="description" />
+                <field name="school_system_id" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_type_view_form" model="ir.ui.view">
+        <field name="name">school_type_view_form</field>
+        <field name="model">school.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="basic">
+                        <field
+              name="school_system_id"
+              options="{'no_create': True}"
+            />
+                        <field name="name" />
+                        <field name="description" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="school_type_action_window" model="ir.actions.act_window">
+        <field name="name">School Type</field>
+        <field name="res_model">school.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new school type
+            </p>
+        </field>
+    </record>
+
+    <menuitem
+    name="School Type"
+    sequence="1"
+    id="school_type_list"
+    parent="school_config"
+    action="school_type_action_window"
+  />
+</odoo>

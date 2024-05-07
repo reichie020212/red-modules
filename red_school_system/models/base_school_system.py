@@ -6,13 +6,27 @@ class BaseSchoolSystem(models.AbstractModel):
     _description = "Base School System"
 
     def _get_school_system_domain(self):
-        return [("id", "in", self.env.user.company_ids.ids)]
+        return [("id", "in", self.env.user._get_company_ids())]
+
+    def _get_default_school_system(self):
+        ids = self.env.user._get_company_ids()
+        if len(ids) == 1:
+            return ids[0]
+
+    def _check_readonly(self):
+        ids = self.user._get_company_ids()
+        
+        if len(ids) == 1:
+            return True
+        return False
 
     school_system_id = fields.Many2one(
         "res.company",
         string="School System",
         required=True,
+        readonly=_check_readonly,
         domain=_get_school_system_domain,
+        default=_get_default_school_system,
     )
 
     @api.model

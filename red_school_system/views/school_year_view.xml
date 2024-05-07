@@ -22,7 +22,7 @@
                     <group name="basic">
                         <field
               name="school_system_id"
-              options="{'no_create': True}"
+              options="{'no_create': True, 'no_open': True}"
             />
                         <field name="name" />
                         <field name="start_date" />

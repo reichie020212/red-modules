@@ -7,16 +7,15 @@ class BaseSchool(models.AbstractModel):
 
     _inherit = ["base.school.system"]
 
-    def _get_school_system_domain(self):
+    def _get_school_domain(self):
         return [
-            ("is_school", "=", True),
             ("school_system_id", "in", self.env.user.company_ids.ids),
         ]
 
     school_id = fields.Many2one(
-        "res.partner",
+        "school.branch",
         string="School",
-        domain=_get_school_system_domain,
+        domain=_get_school_domain,
         inverse="_inverse_school_id",
         required=True,
     )
@@ -28,7 +27,7 @@ class BaseSchool(models.AbstractModel):
     @api.onchange("school_id")
     def _inverse_school_id(self):
         for record in self:
-            record.school_system_id = record.school_id.school_system_id
+            record.school_system_id = record.school_id.school_system_id.id
 
     def compute_school_function(self, field_domain, addt_domain=None):
         for rec in self:

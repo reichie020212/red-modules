@@ -1,7 +1,7 @@
 <odoo>
   <record model="ir.ui.view" id="school_view_tree">
     <field name="name">school_view_tree list</field>
-    <field name="model">res.partner</field>
+    <field name="model">school.branch</field>
     <field name="arch" type="xml">
       <tree>
         <field name="school_system_id" />
@@ -14,7 +14,7 @@
 
   <record model="ir.ui.view" id="school_view_form">
     <field name="name">school_view_form list</field>
-    <field name="model">res.partner</field>
+    <field name="model">school.branch</field>
     <field name="arch" type="xml">
       <form>
         <sheet>
@@ -22,7 +22,7 @@
           <group name="basic">
             <field
               name="school_system_id"
-              options="{'no_create': True}"
+              options="{'no_create': True, 'no_open': True}"
               required="1"
             />
             <field name="name" required="1" />
@@ -40,10 +40,10 @@
 
   <record model="ir.actions.act_window" id="school_action_window">
     <field name="name">School</field>
-    <field name="res_model">res.partner</field>
+    <field name="res_model">school.branch</field>
     <field name="view_mode">tree,form</field>
-    <field name="domain">[('is_school', '=', True)]</field>
-    <field name="context">{'default_is_school': True}</field>
+    <field name="domain">[]</field>
+    <field name="context">{}</field>
     <field name="help" type="html">
       <p class="oe_view_nocontent_create">
         Click to create a new school

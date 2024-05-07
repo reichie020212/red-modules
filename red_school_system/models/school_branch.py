@@ -1,13 +1,13 @@
 from odoo import models, fields, api
 
 
-class School(models.Model):
-    _name = "res.partner"
-    _inherit = ["res.partner", "base.school.system"]
+class SchoolBranch(models.Model):
+    _name = "school.branch"
+    _inherit = ["base.school.system"]
     _description = "School"
 
+    name = fields.Char(required=True)
     code = fields.Char(required=True)
-    is_school = fields.Boolean()
     school_type = fields.Many2one("school.type", string="School Type")
     school_type_domain = fields.Char(compute="_compute_school_type_domain")
 

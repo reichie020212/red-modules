@@ -3,44 +3,45 @@
     <record id="school_filter_to_school_system" model="ir.rule">
       <field name="name">Filter school by school system of the user</field>
       <field name="model_id" ref="red_school_system.model_school_branch" />
-      <field name="domain_force">[('school_system_id', 'in', user.company_ids.ids)]</field>
+      <field name="domain_force">[('company_id', 'in', user.company_ids.ids)]</field>
       <field name="groups" eval="[(4, ref('base.group_user'))]" />
     </record>
     <record id="school_type_filter_to_school_system" model="ir.rule">
         <field name="name">Filter school type by school system of the user</field>
         <field name="model_id" ref="red_school_system.model_school_type" />
-        <field name="domain_force">[('school_system_id', 'in', user.company_ids.ids)]</field>
+        <field name="domain_force">[('company_id', 'in', user.company_ids.ids)]</field>
         <field name="groups" eval="[(4, ref('base.group_user'))]" />
     </record>
 
     <record id="school_year_filter_to_school_system" model="ir.rule">
       <field name="name">Filter school year by school system of the user</field>
       <field name="model_id" ref="red_school_system.model_school_year" />
-      <field name="domain_force">[('school_system_id', 'in', user.company_ids.ids)]</field>
+      <field name="domain_force">[('company_id', 'in', user.company_ids.ids)]</field>
       <field name="groups" eval="[(4, ref('base.group_user'))]" />
     </record>
 
     <record id="year_level_filter_to_school_system" model="ir.rule">
       <field name="name">Filter year level by school system of the user</field>
       <field name="model_id" ref="red_school_system.model_year_level" />
-      <field name="domain_force">[('school_system_id', 'in', user.company_ids.ids)]</field>
+      <field name="domain_force">[('company_id', 'in', user.company_ids.ids)]</field>
       <field name="groups" eval="[(4, ref('base.group_user'))]" />
+    </record>
+
+    <record id="category_school_security" model="ir.module.category">
+      <field name="name">School</field>
     </record>
 
     <record model="res.groups" id="school_admin">
         <field name="name">School Admin</field>
+        <field name="category_id" ref="category_school_security" />
         <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
-        <field
-      name="users"
-      eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
-    />
     </record>
     <record model="res.groups" id="school_system_admin">
         <field name="name">School System Admin</field>
-        <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="implied_ids" eval="[(4, ref('school_admin'))]" />
         <field
-      name="users"
-      eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
-    />
+          name="users"
+          eval="[Command.link(ref('base.user_root')), Command.link(ref('base.user_admin'))]"
+        />
     </record>
 </odoo>

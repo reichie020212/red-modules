@@ -4,9 +4,16 @@
 
     <!-- Submenu items -->
     <menuitem
-    name="Configuration"
-    id="school_config"
-    parent="school_system_menu_root"
-    sequence="20"
-  />
+      name="Configuration"
+      id="school_config_root"
+      parent="school_system_menu_root"
+      sequence="50"
+    />
+    
+    <menuitem 
+      id="school_config"
+      name="School"
+      parent="school_config_root"
+      groups="school_admin"
+    />
 </odoo>

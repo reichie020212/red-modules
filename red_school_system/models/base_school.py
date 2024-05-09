@@ -9,7 +9,7 @@ class BaseSchool(models.AbstractModel):
 
     def _get_school_domain(self):
         return [
-            ("school_system_id", "in", self.env.user.company_ids.ids),
+            ("company_id", "in", self.env.user.company_ids.ids),
         ]
 
     school_id = fields.Many2one(
@@ -27,7 +27,7 @@ class BaseSchool(models.AbstractModel):
     @api.onchange("school_id")
     def _inverse_school_id(self):
         for record in self:
-            record.school_system_id = record.school_id.school_system_id.id
+            record.company_id = record.school_id.company_id.id
 
     def compute_school_function(self, field_domain, addt_domain=None):
         for rec in self:

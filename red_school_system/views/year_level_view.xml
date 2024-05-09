@@ -21,24 +21,24 @@
                 <sheet>
                     <group name="basic">
                         <field
-              name="school_system_id"
-              invisible="1"
-              options="{'no_create': True, 'no_open': True}"
-            />
+                            name="company_id"
+                            options="{'no_create': True, 'no_open': True}"
+                            readonly="1"
+                        />
                         <field name="year_level_domain" invisible="1" />
                         <field name="school_id" options="{'no_create': True, 'no_open': True}" />
                         <field name="name" />
                         <field name="code" />
                         <field
-              name="next_year_level_id"
-              options="{'no_create': True}"
-              domain="year_level_domain"
-            />
+                            name="next_year_level_id"
+                            options="{'no_create': True}"
+                            domain="year_level_domain"
+                        />
                         <field
-              name="prev_year_level_id"
-              options="{'no_create': True}"
-              domain="year_level_domain"
-            />
+                            name="prev_year_level_id"
+                            options="{'no_create': True}"
+                            domain="year_level_domain"
+                        />
                     </group>
                 </sheet>
             </form>

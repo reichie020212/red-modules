@@ -12,7 +12,7 @@ class SchoolType(models.Model):
     _sql_constraints = [
         (
             "name_uniq",
-            "unique(name, school_system_id)",
+            "unique(name, company_id)",
             "School Type name must be unique per school system!",
         ),
     ]

@@ -1,0 +1,23 @@
+{
+    "name": "School Staff",
+    "author": "reichie020212",
+    "website": "https://github.com/reichie020212/red-modules",
+    "category": "Self-Developed Modules",
+    "version": "17.0.1.0.0",
+    "depends": ["hr", "red_school_system"],
+    "data": [
+        # "security/ir.model.access.csv",
+        "views/menu_root.xml",
+        "views/work_location_view.xml",
+        "views/job_position_view.xml",
+        "views/department_view.xml",
+        "views/employment_type_view.xml",
+        "views/staff_view.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+    "maintainer": "reichie020212",
+    "license": "LGPL-3",
+    "assets": {},
+}

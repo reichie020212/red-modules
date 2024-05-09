@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="school_student_view_tree" model="ir.ui.view">
+        <field name="name">school_student_view_tree</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+                <field name="gender" />
+                <field name="school_id" options="{'no_create': True, 'no_open': True}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="school_student_view_form" model="ir.ui.view">
+        <field name="name">school_student_view_form</field>
+        <field name="model">school.student</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="basic" string="Basic Information">
+                        <field
+                            name="school_id"
+                            options="{'no_create': True, 'no_open': True}"
+                        />
+                        <field name="name" />
+                        <field name="first_name" />
+                        <field name="middle_name" />
+                        <field name="last_name" />
+                        <field name="birth_date" />
+                        <field name="place_of_birth" />
+                        <field name="active" />
+                        <field name="gender" />
+                        <field name="marital_status" />
+                        <field name="mobile_phone" />
+                        <field name="email" />
+                    </group>
+                    <group name="address" string="Address">
+                        <field name="street" />
+                        <field name="street2" />
+                        <field name="city" />
+                        <field name="zip" />
+                        <field name="house_number" />
+                        <field name="barangay" />
+                        <field name="country_id" />
+                        <field name="state_id" />
+                    </group>
+                    <group name="emergency_contacts" string="Contacts">
+                        <field name="mother_name" />
+                        <field name="mother_phone_number" />
+                        <field name="father_name" />
+                        <field name="father_phone_number" />
+                        <field name="other_emergency_contact_name" />
+                        <field name="other_emergency_contact_phone_number" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="student_action_window" model="ir.actions.act_window">
+        <field name="name">Student Information</field>
+        <field name="res_model">school.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+                Click to create a new student
+            </p>
+        </field>
+    </record>
+    
+    <menuitem
+        name="Student"
+        sequence="5"
+        id="student_menu_root"
+        parent="red_school_system.school_system_menu_root"
+    />
+
+    <menuitem
+        name="Student Information"
+        sequence="1"
+        id="student_list"
+        parent="student_menu_root"
+        action="student_action_window"
+    />
+
+  </odoo>
+  

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+student_admin_access,Student Admin Access,red_school_student.model_school_student,red_school_student.student_admin,1,1,1,1
+
+student_user_access,Student User Access,red_school_student.model_school_student,red_school_student.student_user,1,0,0,0

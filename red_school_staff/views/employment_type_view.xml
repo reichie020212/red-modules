@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="menu_view_hr_contract_type"
+        action="hr.hr_contract_type_action"
+        parent="red_school_staff.hr_config"
+        sequence="2"
+        groups="hr.group_hr_manager"
+    />
+
+</odoo>

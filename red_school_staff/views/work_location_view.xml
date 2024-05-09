@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem
+        id="menu_hr_work_location_tree"
+        name="Work Locations"
+        action="hr.hr_work_location_action"
+        parent="red_school_staff.hr_config"
+        sequence="5"
+        groups="hr.group_hr_manager"
+    />
+</odoo>

@@ -1,0 +1,23 @@
+{
+    "name": "School System",
+    "author": "reichie020212",
+    "website": "https://github.com/reichie020212/red-modules",
+    "category": "Self-Developed Modules",
+    "version": "17.0.1.0.0",
+    "depends": ["base"],
+    "data": [
+        "security/security.xml",
+        "security/ir.model.access.csv",
+        "views/menu_root.xml",
+        "views/school_view.xml",
+        "views/school_type_view.xml",
+        "views/school_year_view.xml",
+        "views/year_level_view.xml",
+    ],
+    "application": True,
+    "installable": True,
+    "auto_install": False,
+    "maintainer": "reichie020212",
+    "license": "LGPL-3",
+    "assets": {},
+}

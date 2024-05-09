@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem
+        id="menu_hr_department_tree"
+        action="hr.hr_department_kanban_action"
+        parent="hr_menu_root"
+        sequence="4"
+        groups="hr.group_hr_manager"
+    />
+
+</odoo>

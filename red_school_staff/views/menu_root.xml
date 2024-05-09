@@ -1,0 +1,16 @@
+<odoo>
+    <menuitem 
+      id="hr_config"
+      name="HR"
+      parent="red_school_system.school_config_root"
+      groups="red_school_system.school_admin"
+      sequence="20"
+    />
+
+    <menuitem
+        name="HR"
+        sequence="10"
+        id="hr_menu_root"
+        parent="red_school_system.school_system_menu_root"  
+    />
+</odoo>
